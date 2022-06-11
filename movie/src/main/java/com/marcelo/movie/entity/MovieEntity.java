@@ -1,8 +1,6 @@
 package com.marcelo.movie.entity;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 

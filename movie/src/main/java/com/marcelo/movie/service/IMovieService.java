@@ -3,7 +3,9 @@ package com.marcelo.movie.service;
 import com.marcelo.movie.dto.MovieDTO;
 import com.marcelo.movie.entity.MovieEntity;
 
-public interface MovieService {
+import java.util.List;
+
+public interface IMovieService {
     void save(MovieDTO dto);
-    MovieEntity findByGenre(String genre);
+    List<MovieEntity> findByGenre(String genre);
 }

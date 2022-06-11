@@ -2,15 +2,15 @@ package com.marcelo.movie.service.impl;
 
 import com.marcelo.movie.dto.MovieDTO;
 import com.marcelo.movie.entity.MovieEntity;
-import com.marcelo.movie.feign.CatalogFeign;
 import com.marcelo.movie.repository.MovieRepository;
-import com.marcelo.movie.service.MovieService;
+import com.marcelo.movie.service.IMovieService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class MovieServiceImpl implements MovieService {
+import java.util.List;
 
-    @Autowired
-    private CatalogFeign catalogFeign;
+@Service
+public class MovieServiceImpl implements IMovieService {
 
     @Autowired
     private MovieRepository repository;
@@ -25,8 +25,8 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public MovieEntity findByGenre(String genre) {
-        var MovieEntity= repository.findByGenre(genre);
-        return MovieEntity;
+    public List<MovieEntity> findByGenre(String genre) {
+        List<MovieEntity> movies= repository.findByGenre(genre);
+        return movies;
     }
 }
